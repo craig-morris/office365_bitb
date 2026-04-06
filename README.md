@@ -41,7 +41,7 @@ sudo systemctl enable apache2
 
 sudo apt -y install git
 
-git clone https://github.com/craig-morris/test2bitb.git
+git clone https://github.com/craig-morris/office365_bitb.git
 
 cd test2bitb
 
@@ -62,7 +62,7 @@ sudo cp -r ./pages/secondary/ /var/www/
 sudo rm -r /var/www/html/
 
 
-sudo mkdir -p /etc/letsencrypt/live/managedservices365.assumetrend.org/
+sudo mkdir -p /etc/letsencrypt/live/managedservices365.domain.org/
 
 
 install standalone ssl
@@ -71,9 +71,9 @@ sudo apt update && sudo apt install certbot
 
 Kill apache first --- sudo systemctl stop apache2
 
-sudo certbot certonly --standalone -d managedservices365.assumetrend.org -d login.managedservices365.assumetrend.org
+sudo certbot certonly --standalone -d managedservices365.domain.org -d login.managedservices365.domain.org
 
-sudo chmod 600 /etc/letsencrypt/live/managedservices365.assumetrend.org/privkey.pem
+sudo chmod 600 /etc/letsencrypt/live/managedservices365.domain.org/privkey.pem
 
 
 sudo cp -r ./custom-subs /etc/apache2/custom-subs
